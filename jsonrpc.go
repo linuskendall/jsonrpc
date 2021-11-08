@@ -154,7 +154,7 @@ type RPCClient interface {
 type RPCRequest struct {
 	Method  string      `json:"method"`
 	Params  interface{} `json:"params,omitempty"`
-	ID      int         `json:"id"`
+	ID      interface{}  `json:"id"`
 	JSONRPC string      `json:"jsonrpc"`
 }
 
