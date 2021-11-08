@@ -186,7 +186,7 @@ type RPCResponse struct {
 	JSONRPC string      `json:"jsonrpc"`
 	Result  interface{} `json:"result,omitempty"`
 	Error   *RPCError   `json:"error,omitempty"`
-	ID      int         `json:"id"`
+	ID      interface{} `json:"id"`
 }
 
 // RPCError represents a JSON-RPC error object if an RPC error occurred.
