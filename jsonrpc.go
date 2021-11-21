@@ -2,8 +2,8 @@
 package jsonrpc
 
 import (
-  "context"
 	"bytes"
+	"context"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -154,7 +154,7 @@ type RPCClient interface {
 type RPCRequest struct {
 	Method  string      `json:"method"`
 	Params  interface{} `json:"params,omitempty"`
-	ID      interface{}  `json:"id"`
+	ID      interface{} `json:"id"`
 	JSONRPC string      `json:"jsonrpc"`
 }
 
@@ -246,8 +246,8 @@ type RPCClientOpts struct {
 type RPCResponses []*RPCResponse
 
 // AsMap returns the responses as map with response id as key.
-func (res RPCResponses) AsMap() map[int]*RPCResponse {
-	resMap := make(map[int]*RPCResponse, 0)
+func (res RPCResponses) AsMap() map[interface{}]*RPCResponse {
+	resMap := make(map[interface{}]*RPCResponse)
 	for _, r := range res {
 		resMap[r.ID] = r
 	}
